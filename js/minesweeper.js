@@ -167,7 +167,7 @@ function onCellClicked(elCell, cellI, cellJ) {
 
 
     showCell(cell)
-    const value = currCell.minesAroundCount ? currCell.minesAroundCount : ''
+    const value = cell.minesAroundCount ? cell.minesAroundCount : ''
     renderCell(elCell, value)
 
     if (cell.minesAroundCount === 0) {
