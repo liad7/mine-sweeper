@@ -1,0 +1,42 @@
+body {
+    text-align: center;
+}
+
+
+table {
+    border: solid 2px black;
+    margin: auto;
+
+}
+
+tbody {
+    border: solid 2px black;
+
+}
+
+.cell {
+    border: solid 2px black;
+    height: 20px;
+    width: 20px;
+    max-width: 20px;
+    background-color: rgb(49, 46, 46);
+}
+
+.shown {
+    background-color: rgb(216, 202, 202);
+}
+
+.marked {
+    background-color: rgb(245, 1, 1);
+
+}
+
+.zero.shown {}
+
+.one {
+    color: rgb(9, 9, 194);
+}
+
+.two {
+    color: rgb(5, 146, 5);
+}
