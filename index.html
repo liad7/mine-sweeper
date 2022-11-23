@@ -11,10 +11,17 @@
 
 <body onload="onInit()">
     <div></div>
-    <div class="clock">0</div>
-    <table class="mines-board" onmousedown="onFirstClick()">
-        <thead></thead>
-        <tbody class=></tbody>
+    <button onclick="onInit(4,2)">Beginner</button>
+    <button onclick="onInit(8,14)">Medium</button>
+    <button onclick="onInit(12,32)">Expert</button>
+    <div class="heading">
+
+        <button class="smiley" onload="onInit()"></button>
+        <div class="clock" style="display: inline">0</div>
+
+    </div>
+    <table class="mines-board" onmousedown="onStartTimer()">
+        <tbody></tbody>
     </table>
 
 

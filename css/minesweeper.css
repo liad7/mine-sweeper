@@ -1,0 +1,73 @@
+body {
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    margin: 10px;
+
+}
+
+table {
+    border: solid 2px black;
+    margin: auto;
+
+}
+
+.heading {
+    column-span: all;
+
+}
+
+tbody {
+    border: solid 2px black;
+
+}
+
+.clock {
+    position: absolute;
+    right: 45%;
+}
+
+.cell,
+.smiley {
+    /* border: solid 2px black; */
+    box-shadow: 1px 2px 2px 1px #bcb0b087;
+    height: 20px;
+    width: 20px;
+    /* max-width: 20px; */
+    background-color: rgb(147, 140, 140);
+}
+
+.shown {
+    background-color: rgb(216, 202, 202);
+}
+
+.marked {
+    background-color: rgb(245, 1, 1);
+
+}
+
+.smiley {
+    height: 30px;
+    width: 30px;
+    color: yellow;
+    margin: auto;
+}
+
+
+.one {
+    color: rgb(9, 9, 194);
+}
+
+.two {
+    color: rgb(5, 146, 5);
+}
+
+.three {
+    color: rgb(227, 6, 6);
+}
+
+.four {
+    color: rgb(16, 0, 110);
+}
