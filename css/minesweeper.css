@@ -1,17 +1,25 @@
 body {
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: aliceblue;
 }
 
 button {
     cursor: pointer;
     margin: 10px;
+    border-style: outset;
+    border-width: 7px;
+    border-color: rgb(238 236 236);
+
 
 }
 
 table {
     border: solid 2px black;
     margin: auto;
+    border-style: ridge;
+    border-width: 10px;
+    border-color: rgb(165, 152, 152);
 
 }
 
@@ -20,29 +28,28 @@ table {
 
 }
 
-/* .clock {
-    position: absolute;
-    right: 45%;
-} */
-
 .cell,
 .smiley {
-    /* border: solid 2px black; */
-    box-shadow: 1px 2px 2px 1px #bcb0b087;
+    border-style: outset;
+    border-width: 3px;
+    border-color: rgb(238 236 236);
     height: 20px;
     width: 20px;
-    /* max-width: 20px; */
-    background-color: rgb(147, 140, 140);
+    background-color: rgb(176, 171, 171);
     background-size: cover;
 
 }
 
 .shown {
-    background-color: rgb(186, 176, 176);
+    background-color: rgb(157, 147, 147);
+    border: solid 1px black;
+    height: 20px;
+    width: 20px;
+    padding: 3px;
+    font-weight: 900;
 }
 
 .marked {
-    /* background-image: url("../img/flag.png"); */
     background-size: cover;
 
 }
@@ -51,6 +58,11 @@ table {
     background-color: yellow;
 }
 
+.special {
+    height: 40px;
+    border: solid 3px grey;
+    margin: auto;
+}
 
 .smiley {
     height: 30px;
@@ -61,10 +73,6 @@ table {
     background-size: contain;
     /* background-size: cover; */
 }
-/* .smiley img{
-    height: 30px;
-    margin: auto;
-} */
 
 .cell img {
     height: 20px;
@@ -84,4 +92,12 @@ table {
 
 .four {
     color: rgb(16, 0, 110);
+}
+
+.five {
+    color: brown;
+}
+
+.six {
+    color: aqua;
 }

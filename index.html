@@ -30,12 +30,16 @@
     </table>
     <div class="hints"></div>
     <div>Best score for this level: <span class="best"></span> sec</div>
-    <div style="display: inline-block;">
-        <button onclick="randomSafeCell()">safe</button>
+    <div>
+        <button onclick="randomSafeCell()">Safe Click</button>
+        <br>
         <span class="safeClick"></span> clicks available
     </div>
-    <button onclick="setSevenBoomBoard()">7 BOOM</button>
-    
+    <br>
+    <div><span class="special">SPECIAL MODES</span> </div>
+    <button onclick="onSevenBoomClick()">7 BOOM</button>
+    <button class="mega" onclick="onMegaHintClick(this)">Mega Hint</button>
+
     <script src="js/utils.js"></script>
     <script src="js/minesweeper.js"></script>
 </body>
