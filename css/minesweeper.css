@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 button {
@@ -19,15 +20,10 @@ table {
 
 }
 
-tbody {
-    border: solid 2px black;
-
-}
-
-.clock {
+/* .clock {
     position: absolute;
     right: 45%;
-}
+} */
 
 .cell,
 .smiley {
@@ -37,14 +33,18 @@ tbody {
     width: 20px;
     /* max-width: 20px; */
     background-color: rgb(147, 140, 140);
+    background-size: cover;
+
 }
 
 .shown {
-    background-color: rgb(216, 202, 202);
+    background-color: rgb(186, 176, 176);
 }
 
 .marked {
     background-color: rgb(245, 1, 1);
+    background-image: url("../img/flag.png");
+    background-size: cover;
 
 }
 
@@ -53,8 +53,18 @@ tbody {
     width: 30px;
     color: yellow;
     margin: auto;
+    /* background-image: url("../img/start.png"); */
+    /* background-size: contain; */
+    background-size: cover;
 }
+/* .smiley img{
+    height: 30px;
+    margin: auto;
+} */
 
+.cell img {
+    height: 20px;
+}
 
 .one {
     color: rgb(9, 9, 194);

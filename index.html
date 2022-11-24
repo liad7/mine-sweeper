@@ -16,14 +16,18 @@
     <button onclick="onInit(12,32)">Expert</button>
     <div class="heading">
 
-        <button class="smiley" onload="onInit()"></button>
-        <div class="clock" style="display: inline">0</div>
+        <div class="clock" style=" margin: auto;">0</div>
+<div style="display: inline-block"><span class="lives">3 </span>lives left</div>
 
     </div>
-    <table class="mines-board" onmousedown="onStartTimer()">
-        <tbody></tbody>
-    </table>
 
+    <table class="mines-board" onmousedown="onStartTimer()">
+        <tbody>
+            <tr>
+                <button class="smiley" onclick="newGame()"></button>
+            </tr>
+        </tbody>
+    </table>
 
 
 

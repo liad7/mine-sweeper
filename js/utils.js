@@ -1,5 +1,5 @@
 'use strict'
-var gDigitNames = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight']
+var gDigitNames = ['zero ', 'one ', 'two ', 'three ', 'four ', 'five ', 'six ', 'seven ', 'eight ']
 
 function countNegsMines(cellI, cellJ, mat) {
     var neighborsCount = 0
@@ -15,16 +15,22 @@ function countNegsMines(cellI, cellJ, mat) {
     }
     return neighborsCount
 }
-function showCell(cell) {
+function updateCell(cell) {
     cell.isShown = true
     gGame.shownCount++
     checkVictory()
 
 }
 function renderCell(elCell, value) {
-    elCell.classList.add('shown')
-    elCell.innerHTML = value
 
+    console.log(elCell);
+    console.log(value);
+    elCell.classList.add('shown')
+    console.log(elCell);
+
+    elCell.innerText = value
+    // elCell.innerHTML = value
+    console.log(elCell);
 }
 
 function getCellsWithoutMine(board) {
@@ -36,13 +42,13 @@ function getCellsWithoutMine(board) {
             }
         }
     }
-    console.log(Cells)
     return Cells
 
 }
 
 // Returns the class name for a specific cell
 function getClassName(location) {
+    console.log(location);
     const cellClass = 'cell-' + location.i + '-' + location.j
     return cellClass
 }
