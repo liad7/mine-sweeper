@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/minesweeper.css">
+    <title>Minesweeper</title>
+</head>
+
+<body onload="onInit()" oncontextmenu="return false">
+    <div></div>
+    <button onclick="onInit(4,2)">Beginner</button>
+    <button onclick="onInit(8,14)">Medium</button>
+    <button onclick="onInit(12,32)">Expert</button>
+    <div class="heading">
+
+        <div class="clock" style=" margin: auto;">0</div>
+        <div style="display: inline-block"><span class="lives">3 </span>lives left</div>
+
+    </div>
+
+    <table class="mines-board" onmousedown="onStartTimer()">
+        <tbody>
+            <tr>
+                <button class="smiley" onclick="newGame()"></button>
+            </tr>
+        </tbody>
+    </table>
+    <div class="hints"></div>
+    <div>Best score for this level: <span class="best"></span> sec</div>
+    <div style="display: inline-block;">
+        <button onclick="randomSafeCell()">safe</button>
+        <span class="safeClick"></span> clicks available
+    </div>
+    <button onclick="setSevenBoomBoard()">7 BOOM</button>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/minesweeper.js"></script>
+</body>
+
+</html>
