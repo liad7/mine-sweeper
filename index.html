@@ -9,7 +9,7 @@
     <title>Minesweeper</title>
 </head>
 
-<body onload="onInit()">
+<body onload="onInit()" oncontextmenu="return false">
     <div></div>
     <button onclick="onInit(4,2)">Beginner</button>
     <button onclick="onInit(8,14)">Medium</button>
@@ -17,7 +17,7 @@
     <div class="heading">
 
         <div class="clock" style=" margin: auto;">0</div>
-<div style="display: inline-block"><span class="lives">3 </span>lives left</div>
+        <div style="display: inline-block"><span class="lives">3 </span>lives left</div>
 
     </div>
 
@@ -28,9 +28,14 @@
             </tr>
         </tbody>
     </table>
-
-
-
+    <div class="hints"></div>
+    <div>Best score for this level: <span class="best"></span> sec</div>
+    <div style="display: inline-block;">
+        <button onclick="randomSafeCell()">safe</button>
+        <span class="safeClick"></span> clicks available
+    </div>
+    <button onclick="setSevenBoomBoard()">7 BOOM</button>
+    
     <script src="js/utils.js"></script>
     <script src="js/minesweeper.js"></script>
 </body>

@@ -22,15 +22,30 @@ function updateCell(cell) {
 
 }
 function renderCell(elCell, value) {
-
-    console.log(elCell);
-    console.log(value);
     elCell.classList.add('shown')
-    console.log(elCell);
-
     elCell.innerText = value
     // elCell.innerHTML = value
-    console.log(elCell);
+}
+
+function unrenderCell(elCell,value,cell){
+    elCell.classList.remove('shown')
+    if(cell.isMarked) elCell.style.backgroundImage = MARKED
+
+    else if(cell.isMine) elCell.style.backgroundImage = value
+    elCell.innerHTML = value
+
+}
+
+function renderMine(elCell, value) {
+    elCell.classList.add('shown')
+    elCell.style.backgroundImage = value
+
+}
+
+function getEmptyCell(board){
+    const cells = getCellsWithoutMine(board)
+    const idx = getRandomInt(0, cells.length)
+    return cells[idx]
 }
 
 function getCellsWithoutMine(board) {
@@ -64,7 +79,7 @@ function uploadClock() {
     const elClock = document.querySelector('.clock')
     const now = new Date().getTime()
     const timer = ((now - gTime) / 1000).toFixed(0)
-
+    gGame.secsPassed = +timer
     elClock.innerText = timer
 
 }

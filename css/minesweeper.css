@@ -42,20 +42,24 @@ table {
 }
 
 .marked {
-    background-color: rgb(245, 1, 1);
-    background-image: url("../img/flag.png");
+    /* background-image: url("../img/flag.png"); */
     background-size: cover;
 
 }
+
+.safe {
+    background-color: yellow;
+}
+
 
 .smiley {
     height: 30px;
     width: 30px;
     color: yellow;
     margin: auto;
-    /* background-image: url("../img/start.png"); */
-    /* background-size: contain; */
-    background-size: cover;
+    background-image: url("../img/start.png");
+    background-size: contain;
+    /* background-size: cover; */
 }
 /* .smiley img{
     height: 30px;
