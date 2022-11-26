@@ -1,37 +1,107 @@
 body {
     text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: rgb(238 236 236);
+
 }
+
+button {
+    cursor: pointer;
+    margin: 10px;
+    border-style: outset;
+    border-width: 7px;
+    border-color: rgb(238 236 236);
+    box-shadow: 0px 0px 1px 2px #484646;
+
+
+}
+
 
 
 table {
     border: solid 2px black;
     margin: auto;
+    border-style: outset;
+    border-width: 10px;
+    border-color: rgb(165, 152, 152);
 
 }
 
-tbody {
-    border: solid 2px black;
+.heading {
+    column-span: all;
 
 }
 
-.cell {
-    border: solid 2px black;
+.clock {
+    border-style: outset;
+    border-width: 7px;
+    border-color: rgb(238 236 236);
+    box-shadow: 0px 0px 1px 2px #484646;
+    position: absolute;
+    right: 30%;
+    padding: 5px 20px;
+    background-color: rgb(238 236 236);
+    font-weight: 900;
+}
+
+.cell,
+.smiley {
+    border-style: outset;
+    border-width: 3px;
+    border-color: rgb(238 236 236);
     height: 20px;
     width: 20px;
-    max-width: 20px;
-    background-color: rgb(49, 46, 46);
+    background-color: rgb(176, 171, 171);
+    background-size: cover;
+
 }
 
 .shown {
-    background-color: rgb(216, 202, 202);
+    background-color: rgb(157, 147, 147);
+    border: solid 1px black;
+    height: 20px;
+    width: 20px;
+    padding: 3px;
+    font-weight: 900;
 }
 
 .marked {
-    background-color: rgb(245, 1, 1);
+    background-size: cover;
 
 }
 
-.zero.shown {}
+.dark {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    padding: 5px;
+    width: 150px;
+}
+
+
+.safe {
+    background-color: yellow;
+}
+
+.special {
+    height: 40px;
+    border: solid 3px grey;
+    margin: auto;
+}
+
+.smiley {
+    height: 30px;
+    width: 30px;
+    color: yellow;
+    margin: auto;
+    background-image: url("../img/start.png");
+    background-size: contain;
+
+}
+
+.cell img {
+    height: 20px;
+}
 
 .one {
     color: rgb(9, 9, 194);
@@ -39,4 +109,28 @@ tbody {
 
 .two {
     color: rgb(5, 146, 5);
+}
+
+.three {
+    color: rgb(227, 6, 6);
+}
+
+.four {
+    color: rgb(16, 0, 110);
+}
+
+.five {
+    color: brown;
+}
+
+.six {
+    color: aqua;
+}
+
+.seven {
+    color: blueviolet;
+}
+
+.eight {
+    color: darkorange;
 }

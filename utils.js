@@ -1,7 +1,7 @@
 'use strict'
-var gDigitNames = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight']
+var gDigitNames = ['zero ', 'one ', 'two ', 'three ', 'four ', 'five ', 'six ', 'seven ', 'eight ']
 
-function countNeighbors(cellI, cellJ, mat) {
+function countNegsMines(cellI, cellJ, mat) {
     var neighborsCount = 0
     for (var i = cellI - 1; i <= cellI + 1; i++) {
         if (i < 0 || i >= mat.length) continue
@@ -15,40 +15,61 @@ function countNeighbors(cellI, cellJ, mat) {
     }
     return neighborsCount
 }
+function updateCell(cell) {
+    cell.isShown = true
+    gGame.shownCount++
+    checkVictory()
 
+}
 function renderCell(elCell, value) {
-    // Select the elCell and set the value
-    elCell.innerHTML = value
+    elCell.classList.add('shown')
+    elCell.innerText = value
 }
 
-function getCellsWithoutMine(mat) {
-    const Cells = []
-    for (var i = 0; i < mat.length; i++) {
-        for (var j = 0; j < mat[0].length; j++) {
-            if (!mat[i][j].isMine) {
+function unrenderCell(elCell, value, cell) {
+    elCell.classList.remove('shown')
+    if (cell.isMarked) elCell.style.backgroundImage = MARKED
 
+    else if (cell.isMine) elCell.style.backgroundImage = value
+    elCell.innerHTML = value
+
+}
+
+function renderMine(elCell, value) {
+    console.log(elCell)
+    elCell.classList.add('shown')
+    elCell.style.backgroundImage = value
+
+}
+
+
+function getEmptyCell(board) {
+    const cells = getCellsWithoutMine(board)
+    const idx = getRandomInt(0, cells.length)
+    return cells[idx]
+}
+
+function getCellsWithoutMine(board) {
+    const Cells = []
+    for (var i = 0; i < board.length; i++) {
+        for (var j = 0; j < board[0].length; j++) {
+            if (!board[i][j].isMine && !board[i][j].isShown) {
                 Cells.push({ i, j })
             }
         }
     }
-    console.log(Cells)
     return Cells
 
 }
 
-// function renderCell(location, value) {
-//     const cellSelector = '.' + getClassName(location) // cell-i-j
-//     const elCell = document.querySelector(cellSelector)
-//     elCell.innerHTML = value
-// }
 
-// Returns the class name for a specific cell
 function getClassName(location) {
+    console.log(location)
     const cellClass = 'cell-' + location.i + '-' + location.j
     return cellClass
 }
 
-// Gets a string such as:  'cell-2-7' and returns {i:2, j:7}
+
 function getCellCoord(strCellId) {
     var parts = strCellId.split('-')
     var coord = { i: +parts[1], j: +parts[2] }
@@ -58,17 +79,25 @@ function getCellCoord(strCellId) {
 function uploadClock() {
     const elClock = document.querySelector('.clock')
     const now = new Date().getTime()
-    // const timer = Number.parseFloat((now - gTime)/1000)
-    const timer = ((now - gTime) / 1000).toFixed(0)
+    var seconds = ((now - gTime) / 1000).toFixed(0)
+    gGame.secsPassed = +seconds
 
-    elClock.innerText = timer
+    var minutes = (seconds / 60).toFixed(0)
+    console.log(minutes)
+
+    if (seconds >= 60) {
+        seconds = seconds % 60
+    }
+    minutes = minutes < 10 ? '0' + minutes : minutes
+    seconds = seconds < 10 ? '0' + seconds : seconds
+    elClock.innerText = minutes + ':' + seconds
 
 }
 
 
 function resetTime() {
     var elClock = document.querySelector('.clock')
-    elClock.innerText = '000'
+    elClock.innerText = '00:00'
 }
 
 

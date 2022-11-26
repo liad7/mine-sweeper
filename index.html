@@ -9,19 +9,22 @@
     <title>Minesweeper</title>
 </head>
 
-<body onload="onInit()" oncontextmenu="return false">
+<body onload="onInit()">
     <div></div>
     <button onclick="onInit(4,2)">Beginner</button>
     <button onclick="onInit(8,14)">Medium</button>
     <button onclick="onInit(12,32)">Expert</button>
     <div class="heading">
 
-        <div class="clock" style=" margin: auto;">0</div>
+        <div class="clock" style=" margin: auto;"></div>
         <div style="display: inline-block"><span class="lives">3 </span>lives left</div>
 
     </div>
+    <div class="dark">Change style
+        <button onclick="onDarkMode(this)">Dark Mode</button>
+    </div>
 
-    <table class="mines-board" onmousedown="onStartTimer()">
+    <table class="mines-board" onmousedown="onStartTimer()" oncontextmenu="return false">
         <tbody>
             <tr>
                 <button class="smiley" onclick="newGame()"></button>
@@ -31,7 +34,7 @@
     <div class="hints"></div>
     <div>Best score for this level: <span class="best"></span> sec</div>
     <div>
-        <button onclick="randomSafeCell()">Safe Click</button>
+        <button onclick="onSafeClick()">Safe Click</button>
         <br>
         <span class="safeClick"></span> clicks available
     </div>
@@ -39,6 +42,10 @@
     <div><span class="special">SPECIAL MODES</span> </div>
     <button onclick="onSevenBoomClick()">7 BOOM</button>
     <button class="mega" onclick="onMegaHintClick(this)">Mega Hint</button>
+    <div>
+        <button onclick="onManualClick()">Manually Create</button>
+        <p class="manual"></p>
+    </div>
 
     <script src="js/utils.js"></script>
     <script src="js/minesweeper.js"></script>
