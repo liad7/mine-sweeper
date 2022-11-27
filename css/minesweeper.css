@@ -1,7 +1,8 @@
 body {
     text-align: center;
     font-family: "Lucida Console", "Courier New", monospace;
-    background-color: aliceblue;
+    background-color: rgb(238 236 236);
+
 }
 
 button {
@@ -10,14 +11,17 @@ button {
     border-style: outset;
     border-width: 7px;
     border-color: rgb(238 236 236);
+    box-shadow: 0px 0px 1px 2px #484646;
 
 
 }
 
+
+
 table {
     border: solid 2px black;
     margin: auto;
-    border-style: ridge;
+    border-style: outset;
     border-width: 10px;
     border-color: rgb(165, 152, 152);
 
@@ -26,6 +30,18 @@ table {
 .heading {
     column-span: all;
 
+}
+
+.clock {
+    border-style: outset;
+    border-width: 7px;
+    border-color: rgb(238 236 236);
+    box-shadow: 0px 0px 1px 2px #484646;
+    position: absolute;
+    right: 30%;
+    padding: 5px 20px;
+    background-color: rgb(238 236 236);
+    font-weight: 900;
 }
 
 .cell,
@@ -54,6 +70,15 @@ table {
 
 }
 
+.dark {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    padding: 5px;
+    width: 150px;
+}
+
+
 .safe {
     background-color: yellow;
 }
@@ -71,7 +96,7 @@ table {
     margin: auto;
     background-image: url("../img/start.png");
     background-size: contain;
-    /* background-size: cover; */
+
 }
 
 .cell img {
@@ -100,4 +125,12 @@ table {
 
 .six {
     color: aqua;
+}
+
+.seven {
+    color: blueviolet;
+}
+
+.eight {
+    color: darkorange;
 }

@@ -24,25 +24,26 @@ function updateCell(cell) {
 function renderCell(elCell, value) {
     elCell.classList.add('shown')
     elCell.innerText = value
-    // elCell.innerHTML = value
 }
 
-function unrenderCell(elCell,value,cell){
+function unrenderCell(elCell, value, cell) {
     elCell.classList.remove('shown')
-    if(cell.isMarked) elCell.style.backgroundImage = MARKED
+    if (cell.isMarked) elCell.style.backgroundImage = MARKED
 
-    else if(cell.isMine) elCell.style.backgroundImage = value
+    else if (cell.isMine) elCell.style.backgroundImage = value
     elCell.innerHTML = value
 
 }
 
 function renderMine(elCell, value) {
+    console.log(elCell)
     elCell.classList.add('shown')
     elCell.style.backgroundImage = value
 
 }
 
-function getEmptyCell(board){
+
+function getEmptyCell(board) {
     const cells = getCellsWithoutMine(board)
     const idx = getRandomInt(0, cells.length)
     return cells[idx]
@@ -61,14 +62,14 @@ function getCellsWithoutMine(board) {
 
 }
 
-// Returns the class name for a specific cell
+
 function getClassName(location) {
-    console.log(location);
+    console.log(location)
     const cellClass = 'cell-' + location.i + '-' + location.j
     return cellClass
 }
 
-// Gets a string such as:  'cell-2-7' and returns {i:2, j:7}
+
 function getCellCoord(strCellId) {
     var parts = strCellId.split('-')
     var coord = { i: +parts[1], j: +parts[2] }
@@ -78,16 +79,25 @@ function getCellCoord(strCellId) {
 function uploadClock() {
     const elClock = document.querySelector('.clock')
     const now = new Date().getTime()
-    const timer = ((now - gTime) / 1000).toFixed(0)
-    gGame.secsPassed = +timer
-    elClock.innerText = timer
+    var seconds = ((now - gTime) / 1000).toFixed(0)
+    gGame.secsPassed = +seconds
+
+    var minutes = (seconds / 60).toFixed(0)
+    console.log(minutes)
+
+    if (seconds >= 60) {
+        seconds = seconds % 60
+    }
+    minutes = minutes < 10 ? '0' + minutes : minutes
+    seconds = seconds < 10 ? '0' + seconds : seconds
+    elClock.innerText = minutes + ':' + seconds
 
 }
 
 
 function resetTime() {
     var elClock = document.querySelector('.clock')
-    elClock.innerText = '0'//'000'
+    elClock.innerText = '00:00'
 }
 
 
