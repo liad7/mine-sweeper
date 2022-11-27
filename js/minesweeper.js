@@ -1,12 +1,12 @@
 'use strict'
 
 
-const MINE_IMG = 'url("../img/mine.png")'
-const CLICKED_MINE_IMG = 'url("../img/shown-mine.png")'
-const START_SMILEY = 'url("../img/start.png")'
-const LOSE_SMILEY = 'url("../img/lose.png")'
-const WIN_SMILEY = 'url("../img/win.png")'
-const MARKED = 'url("../img/flag.png")'
+const MINE_IMG = 'url("./img/mine.png")'
+const CLICKED_MINE_IMG = 'url("./img/shown-mine.png")'
+const START_SMILEY = 'url("./img/start.png")'
+const LOSE_SMILEY = 'url("./img/lose.png")'
+const WIN_SMILEY = 'url("./img/win.png")'
+const MARKED = 'url("./img/flag.png")'
 
 
 

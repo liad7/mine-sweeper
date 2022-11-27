@@ -94,7 +94,7 @@ table {
     width: 30px;
     color: yellow;
     margin: auto;
-    background-image: url("../img/start.png");
+    background-image: url("./img/start.png");
     background-size: contain;
 
 }
